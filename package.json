@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "Scraper for extracting LinkedIn user profiles data",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "repository": "https://github.com/batovpasha/linkedin-profile-scraper",
   "author": "Pavel Batov <pba.softevol@gmail.com>",
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "node-fetch": "^2.6.0",
     "puppeteer-core": "^1.20.0"
   }
 }

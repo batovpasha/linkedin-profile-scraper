@@ -1,0 +1,7 @@
+{
+  "DEBUGGING_CONFIG_URL": "http://localhost:9222/json/version",
+  "VIEWPORT": {
+    "WIDTH": 1280,
+    "HEIGHT": 720
+  }
+}
