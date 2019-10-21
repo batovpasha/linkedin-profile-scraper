@@ -1,7 +1,7 @@
 'use strict';
 
 // Bootstrap app configs
-Object.defineProperties(global, {
+global.env = Object.defineProperties({}, {
   browser: {
     value: require('./configs/browser'),
   },
@@ -9,9 +9,8 @@ Object.defineProperties(global, {
 
 const createBrowserConnection = require('./lib/browser');
 
-(async () => {
-  const browser = await createBrowserConnection();
-  const page = await browser.newPage();
-
-  await page.goto('https://www.linkedin.com/in/pavlo-batov-7b8b0b192/');
-})();
+createBrowserConnection()
+  .then(browser => browser.newPage())
+  .then(page =>
+    page.goto('https://www.linkedin.com/in/pavlo-batov-7b8b0b192/'),
+  );
