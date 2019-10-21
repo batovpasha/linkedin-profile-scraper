@@ -11,11 +11,14 @@ global.env = Object.defineProperties(
 );
 
 const createBrowserConnection = require('./lib/browser');
+const scrapeProfileData = require('./src/scraper');
 
 (function main() {
   createBrowserConnection()
     .then(browser => browser.newPage())
-    .then(page =>
-      page.goto('https://www.linkedin.com/in/pavlo-batov-7b8b0b192/')
-    );
+    .then(page => {
+      const scrape = scrapeProfileData(page);
+
+      scrape('https://www.linkedin.com/in/shemsedinov/');
+    });
 })();
